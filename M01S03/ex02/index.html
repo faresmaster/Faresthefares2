@@ -1,13 +1,70 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>More Objects</title>
-  </head>
-  <body>
 
-    <script>
+<head>
+  <meta charset="utf-8">
+  <title>More Objects</title>
+</head>
 
-    </script>
-  </body>
+<body>
+  <script>
+    var person = {
+      name: 'Dragos',
+      surname: 'Iordache',
+      age: 32,
+      petOwner: false,
+      skills: {
+        html: true,
+        css: true,
+        javascript: true,
+      },
+      friends: {
+        larry: {
+          name: 'Xander',
+          surname: 'Larryson',
+          age: 30
+        },
+        steven: {
+          name: 'Steveneeeeeeeeee',
+          surname: 'stevenson',
+          age: 31
+        },
+        carole: {
+          name: 'Carolert',
+          surname: 'Caroleson',
+          age: 29
+        }
+      }
+    };
+    console.log(person.friends.larry);
+    console.log(person.skills.javascript);
+    console.log('caroles age is');
+    console.log(person.friends.carole.age);
+    console.log('lary was born in this year');
+    console.log(2019 - person.friends.larry.age);
+    console.log('-------');
+    console.log(`${person.friends.steven.name} is ${person.friends.steven.age - person.friends.larry.age} older than ${person.friends.larry.name}`);
+    console.log('-------');
+    console.log(`my friend is  ${person.friends.steven.name}  ${person.friends.steven.surname} has ${person.friends.steven.age} years`);
+    console.log('-------');
+    console.log('-------');
+    console.log(`My frinds are: ${person.friends.steven.name}, ${person.friends.carole.name} and ${person.friends.larry.name}`);
+    console.log('Stevens surname lenght is...');
+    console.log(person.friends.steven.name.length);
+    console.log('-------');
+    console.log(`carole is born in ${2019 - person.friends.carole.age} and steven in ${2019 - person.friends.steven.age} `);
+    console.log('-------');
+    console.log(`Steven is ${person.friends.steven.age - person.friends.carole.age} years older than carole`);
+    console.log('-------');
+    console.log(`My friend, ${person.friends.carole.name}  ${person.friends.carole.surname}, is ${person.friends.carole.age} years old`);
+    console.log('-------');
+    console.log(`My frinds are: ${person.friends.steven.name}, ${person.friends.carole.name} and ${person.friends.larry.name}`);
+    console.log('larrys surname lenght is...');
+    console.log(person.friends.larry.surname.length);
+    console.log('The difference in the number of characters of their family names is....');
+    console.log(person.friends.steven.name.length - person.friends.carole.name.length);
+
+  </script>
+</body>
+
 </html>
