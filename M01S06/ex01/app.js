@@ -6,40 +6,49 @@ let car = {
   topSpeed: 160,
   reverseSpeed: -50,
   isTrunkOpen: false,
-  areLightsOn:false,
-  turnLightsOn: function() {
-    this. areLightsOn = true;
+  areLightsOn: false,
+  turnLightsOn: function () {
+    this.areLightsOn = true;
   },
-  turnLightsOff: function() {
-    this. areLightsOff = false;
+  turnLightsOff: function () {
+    this.areLightsOff = false;
   },
-  flashlights: function(){
+  flashlights: function () {
     this.turnLightsOff();
-    setTimeout(function() {
-    this.turnLightsOff()
-    } , 800);
-  } ,
+    setTimeout(function () {
+      this.turnLightsOff()
+    }, 800);
+  },
 
-  openTrunk: function() {
+  openTrunk: function () {
     this.isTrunkOpen = true;
-  } , 
-  closeTrunk: function() {
+  },
+  closeTrunk: function () {
     this.isTrunkOpen = false;
-  } , 
-  accelerate: function() {
+  },
+  accelerate: function () {
     this.speed++;
   },
-  decelerate: function() {
+  decelerate: function () {
     this.speed--;
-  }, 
-  stop: function() {
-    this.speed=0;
   },
-  setSpeed: function(speed) {
+  stop: function () {
+    this.speed = 0;
+  },
+  setSpeed: function (speed) {
     if (speed > this.speed) {
-    this.speed = this.topSpeed;
-    return;
+      this.speed = this.topSpeed;
+      return;
+    }
+    if (speed < this.topReverseSpeed) {
+      console.warn('Bounds exceed');
+      this.speed = this.topReverseSpeed;
+      return;
+    }
+
+    this.speed = speed;
   }
+};
 
 console.log(`The car is an ${car.make} and moves with a speed of ${car.speed} km/h`);
 car.decelerate();
@@ -47,4 +56,4 @@ car.decelerate();
 car.decelerate();
 car.decelerate();
 car.decelerate();
-console.log(`the new speed is ${car.speed}`)
+console.log(`the new speed is ${car.speed}`);
