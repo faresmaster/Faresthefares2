@@ -1,37 +1,56 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <title>Person Form</title>        
+  <meta charset="utf-8">
+  <title>Person Form</title>
 </head>
+
 <body>
   <form id="personForm">
     <fieldset>
       <legend>Persoana</legend>
       <label for="name">Nume:</label>
-      <input type="text" name="name"> 
-        
+      <input type="text" name="name">
+
       <br><br>
 
       <label for="surname">Prenume:</label>
-      <input type="text" name="surname"> 
+      <input type="text" name="surname">
 
       <br><br>
 
       <label for="age">Varsta</label>
-      <input type="text" name="age">    
-      
+      <input type="text" name="age">
+
       <br><br>
+
+      <label for="skill"> add skill</label>
+      <input type="text" name="skill" id="skillInput">
+
+      <button type="button" id="addSkill">+</button>
+
+      <br><br>
+      <input type="checkbox" name="hasPets" id="hasPets">
+      <label for="hasPets">does he have pets?</label>
 
       <button type="submit">Adauga</button>
     </fieldset>
-
+    <fieldset id="pet" style="display: none;">
+      <legend>Pet Details</legend>
+      <label for="petName">Name of the animal</label>
+      <input type="text" id="petName" name="petName">
+      <br><br> 
+      <button type="button" id="addPetButton">Add animal</button>
+    </fieldset>
     <fieldset>
       <legend>Detalii</legend>
+      <div id="details"></div>
     </fieldset>
   </form>
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="app.js"></script>
 </body>
+
 </html>
